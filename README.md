@@ -12,6 +12,7 @@ $ npm install chunkhash-replace-webpack-plugin --save-dev
 ###Webpack.config.js
 
 ```javascript
+var path = require('path');
 var ChunkHashReplacePlugin = require('chunkhash-replace-webpack-plugin');
 
 module.exports = {
@@ -20,6 +21,7 @@ module.exports = {
     vendor: ['jquery', 'lodash', 'react', 'react-dom']
   },
   output: {
+    path: path.join(__dirname, 'dist/static'),
     filename: '[name].[chunkhash].js',
     publicPath: 'static',
   },

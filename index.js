@@ -19,14 +19,15 @@ ChunkHashReplacePlugin.prototype.apply = function(compiler) {
       const stats = statsData.toJson();
       const template = fs.readFileSync(src, 'utf8');
 
-      let html = template;
+      let htmlOutput = template;
       for (let chunk of stats.chunks) {
         const bundleName = chunk.names[0];
         const chunkHashFileName = chunk.files[0];
-        html = html.replace(`${bundleName}.js`, chunkHashFileName);
+        const regex = new RegExp(`(<script\\s+src=["'].*)(${bundleName}\\.js)(["']><\/script>)`, 'i');
+        htmlOutput = htmlOutput.replace(regex, `$1${chunkHashFileName}$3`);
       }
 
-      fs.writeFile(dest, html);
+      fs.writeFile(dest, htmlOutput);
     });
   });
 };

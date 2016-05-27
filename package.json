@@ -1,12 +1,23 @@
 {
   "name": "chunkhash-replace-webpack-plugin",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "description": "Webpack plugin for replacing script bundle references with the chunkhash formatted file names.",
+  "keywords": [
+    "chunkhash",
+    "webpack chunkhash",
+    "webpack chunkhash replace",
+    "webpack replace script reference"
+  ],
+  "url": "",
   "main": "index.js",
   "author": "Joey Eng",
   "license": "ISC",
   "devDependencies": {
     "fs": "0.0.2",
     "path": "^0.12.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/giemch/chunkhash-replace-webpack-plugin.git"
   }
 }
