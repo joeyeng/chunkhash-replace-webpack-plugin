@@ -23,7 +23,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist/static'),
     filename: '[name].[chunkhash].js',
-    publicPath: 'static',
+    publicPath: '/static/',
   },
   plugins: [
     new ChunkHashReplacePlugin({
@@ -40,8 +40,8 @@ module.exports = {
 <html lang="en">
 <head></head>
 <body>
-  <script src="static/vendor.js"></script>
-  <script src="static/app.js"></script>
+  <script src="/static/vendor.js"></script>
+  <script src="/static/app.js"></script>
 </body>
 </html>
 ```
@@ -53,8 +53,8 @@ module.exports = {
 <html lang="en">
 <head></head>
 <body>
-  <script src="static/vendor.8c670c84b126bbde6319.js"></script>
-  <script src="static/app.bc9412b20a3d196ac0eb.js"></script>
+  <script src="/static/vendor.8c670c84b126bbde6319.js"></script>
+  <script src="/static/app.bc9412b20a3d196ac0eb.js"></script>
 </body>
 </html>
 ```
