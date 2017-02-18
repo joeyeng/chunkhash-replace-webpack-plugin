@@ -38,14 +38,13 @@ ChunkHashReplacePlugin.prototype.apply = function(compiler) {
             .replace(/[^a-z0-9]/gi, ''); // TODO: Make this more rigid
           let regex = null;
 
-          // TODO: Fix this for a more light search for the tag
           switch(extension) {
             case 'js': {
-              regex = new RegExp(`(<script\\s+src=["'].*)(${fileName}\\.js)(["'] type="text/javascript"><\/script>)`, 'i');
+              regex = new RegExp(`(src=["'].*)(${fileName}\\.js)(["'])`, 'i');
               break;
             }
             case 'css': {
-              regex = new RegExp(`(<link\\s+href=["'].*)(${fileName}\\.css)(["'] rel="stylesheet">)`, 'i');
+              regex = new RegExp(`(href=["'].*)(${fileName}\\.css)(["'])`, 'i');
               break;
             }
             default: {
