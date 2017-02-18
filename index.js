@@ -21,10 +21,40 @@ ChunkHashReplacePlugin.prototype.apply = function(compiler) {
 
       let htmlOutput = template;
       for (let chunk of stats.chunks) {
-        const bundleName = chunk.names[0];
-        const chunkHashFileName = chunk.files[0];
-        const regex = new RegExp(`(<script\\s+src=["'].*)(${bundleName}\\.js)(["']><\/script>)`, 'i');
-        htmlOutput = htmlOutput.replace(regex, `$1${chunkHashFileName}$3`);
+        const {
+          hash,
+          files,
+          names,
+        } = chunk;
+        const bundleName = names[0];
+        files.forEach(file => {
+          const extension = file.split('.').slice(-1).join('');
+          const fileName = file
+            .split(hash)
+            .join('')
+            .split('.')
+            .slice(0, -1)
+            .join('')
+            .replace(/[^a-z0-9]/gi, ''); // TODO: Make this more rigid
+          let regex = null;
+
+          // TODO: Fix this for a more light search for the tag
+          switch(extension) {
+            case 'js': {
+              regex = new RegExp(`(<script\\s+src=["'].*)(${fileName}\\.js)(["'] type="text/javascript"><\/script>)`, 'i');
+              break;
+            }
+            case 'css': {
+              regex = new RegExp(`(<link\\s+href=["'].*)(${fileName}\\.css)(["'] rel="stylesheet">)`, 'i');
+              break;
+            }
+            default: {
+              return;
+            }
+          }
+
+          htmlOutput = htmlOutput.replace(regex, `$1${file}$3`);
+        });
       }
 
       fs.writeFile(dest, htmlOutput);
