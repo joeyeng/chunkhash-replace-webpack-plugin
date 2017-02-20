@@ -1,7 +1,7 @@
 {
   "name": "chunkhash-replace-webpack-plugin",
-  "version": "0.0.8",
-  "description": "Webpack plugin for replacing script bundle references with the chunkhash formatted file names.",
+  "version": "0.0.9",
+  "description": "Webpack plugin for replacing js/css bundle references with chunkhash formatted file names.",
   "keywords": [
     "chunkhash",
     "webpack chunkhash",
