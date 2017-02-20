@@ -1,0 +1,8 @@
+language: node_js
+deploy:
+  provider: npm
+  email: joeyeng@gmail.com
+  api_key:
+    secure: XzSvOmoPGF0KRohOo3RwuF1GxXerJBjSZWz0MvReFJyQ6im8Rzte+KBKlV0bxQ8Jb3ywDxQalaidYbSLT8lqWLdY3QkI4ckoiTbGzIOXyQyW5dOIQVqNIfupIHFVFaE6xT212i/9nJQV+fgYwbdjnEBzYRMv/TvZkcAEkV2OzX5Rj/2vrzg2cqfO1WwEkb8ASkVJ/ImQHEZJXATJcqQ96/VyCVJkYe0iccfI3VgMO/yVGfsM5FXBSepwHGjUnboofYCJfaJsYPInodKtTOd7pr1+ucw03XPcUnfh0u+dl08zKdxDITS8CfUBTsrwjTUSIf9ZIrfrVmXP95iWL/lcsVCg0mFkd6Lw4nJxMbz+YKJ3cBH79UY0t/AUyCUO3Ffw+U42EvRRDkJNOHxrbQsiVHnHc5T2ajhfl+3dWo4/tQYLZJN9QaMkIIfPZQFEnhdllc2FDfCJIhQFw0S0s1JCbtUl3Qy3U4FwHFulolNmdNWgpNmvNdxsDzjhQ1Dlt9rIW2iCQIwI8DBPvLbV4zqtMN/3Ow4iaVKOVukPk6G3pE+dvzYSQVmWp2P4wa+JPosv6petuVV6YbxfJJ2EOATZSjzGhz4ae+2/dHvm7Ia1u+/2P2J0I/nWN8qUj0O4TTdI6oVXMK198W4So0sVY+/HdW3PDw1vIFqogloQHGrCPFA=
+  on:
+    repo: giemch/chunkhash-replace-webpack-plugin
