@@ -1,5 +1,7 @@
 Chunkhash Replace Webpack Plugin
 ================================
+[![Total Downloads](https://img.shields.io/npm/dt/chunkhash-replace-webpack-plugin.svg)](https://npm-stat.com/charts.html?package=chunkhash-replace-webpack-plugin)
+
 The latest release adds support for webpack users who prefer to extract styles out of their js bundle into a separate css file, using a tool like [ExtractTextPlugin](https://www.npmjs.com/package/extract-text-webpack-plugin).
 
 **Tip**: Just use this plugin for your production/staging builds.
@@ -16,7 +18,7 @@ $ npm install chunkhash-replace-webpack-plugin --save-dev
 ```javascript
 const path = require('path');
 const ChunkHashReplacePlugin = require('chunkhash-replace-webpack-plugin');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -54,7 +56,7 @@ module.exports = {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link href="app.css" rel="stylesheet">
+  <link href="/static/app.css" rel="stylesheet">
 </head>
 <body>
   <script src="/static/vendor.js"></script>
@@ -69,7 +71,7 @@ module.exports = {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link href="app.bc9412b20a3d196ac0eb.css" rel="stylesheet">
+  <link href="/static/app.bc9412b20a3d196ac0eb.css" rel="stylesheet">
 </head>
 <body>
   <script src="/static/vendor.8c670c84b126bbde6319.js"></script>
