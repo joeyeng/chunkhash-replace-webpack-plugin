@@ -13,7 +13,7 @@ $ npm install chunkhash-replace-webpack-plugin --save-dev
 
 ## Example
 
-###Webpack.config.js
+### Webpack.config.js
 
 ```javascript
 const path = require('path');
@@ -50,7 +50,7 @@ module.exports = {
   ]
 };
 ```
-###HTML
+### HTML
 
 ```html
 <!DOCTYPE html>
@@ -65,7 +65,7 @@ module.exports = {
 </html>
 ```
 
-###Output
+### Output
 
 ```html
 <!DOCTYPE html>
