@@ -1,8 +1,9 @@
 Chunkhash Replace Webpack Plugin
 ================================
-[![Total Downloads](https://img.shields.io/npm/dt/chunkhash-replace-webpack-plugin.svg)](https://npm-stat.com/charts.html?package=chunkhash-replace-webpack-plugin)
+[![Build](https://travis-ci.org/giemch/chunkhash-replace-webpack-plugin.svg?branch=master)](https://travis-ci.org/giemch/chunkhash-replace-webpack-plugin)
+[![Total Downloads](https://img.shields.io/npm/dt/contenthash-replace-webpack-plugin.svg)](https://npm-stat.com/charts.html?package=contenthash-replace-webpack-plugin)
 
-The latest release adds support for webpack users who prefer to extract styles out of their js bundle into a separate css file, using a tool like [ExtractTextPlugin](https://www.npmjs.com/package/extract-text-webpack-plugin).
+This plugin is for transforming bundle references in your html files with cache friendly filenames using chunkhashes. Its main use is for processing js file references. CSS files will work too, but chunkhashes are associated with js bundles, so changes to your css will not generate a new chunkhash. For handling CSS bundles I recommend the [Content Hash Replace Plugin](https://www.npmjs.com/package/contenthash-replace-webpack-plugin).
 
 **Tip**: Just use this plugin for your production/staging builds.
 
@@ -30,23 +31,11 @@ module.exports = {
     filename: '[name].[chunkhash].js',
     publicPath: '/static/',
   },
-  module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: 'css-loader'
-        })
-      }
-    ]
-  },
   plugins: [
     new ChunkHashReplacePlugin({
       src: 'index.html',
       dest: 'dist/index.html',
-    }),
-    new ExtractTextPlugin('[name].[chunkhash].css')
+    })
   ]
 };
 ```
@@ -55,9 +44,6 @@ module.exports = {
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <link href="/static/app.css" rel="stylesheet">
-</head>
 <body>
   <script src="/static/vendor.js"></script>
   <script src="/static/app.js"></script>
@@ -70,9 +56,6 @@ module.exports = {
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <link href="/static/app.bc9412b20a3d196ac0eb.css" rel="stylesheet">
-</head>
 <body>
   <script src="/static/vendor.8c670c84b126bbde6319.js"></script>
   <script src="/static/app.bc9412b20a3d196ac0eb.js"></script>
