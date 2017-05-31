@@ -1,7 +1,7 @@
 const transform = require('./transform');
 const assert = require('assert');
 
-describe('ChunkHashReplacePlugin', function() {
+describe('ChunkHashReplacePlugin', () => {
     it('should transform single js bundle', function () {
         const appBundle = 'app';
         const appHash = '11111';
