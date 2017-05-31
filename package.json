@@ -12,12 +12,22 @@
   "main": "index.js",
   "author": "Joey Eng",
   "license": "ISC",
+  "scripts": {
+    "test": "mocha",
+    "build-sample": "webpack --config ./sample/webpack.config.js"
+  },
   "devDependencies": {
     "fs": "0.0.2",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "mocha": "^3.4.2",
+    "webpack": "^2.6.1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/giemch/chunkhash-replace-webpack-plugin.git"
+  },
+  "dependencies": {
+    "css-loader": "^0.28.4",
+    "style-loader": "^0.18.1"
   }
 }
