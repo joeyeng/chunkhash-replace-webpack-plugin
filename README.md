@@ -39,6 +39,7 @@ module.exports = {
   ]
 };
 ```
+
 ### HTML
 
 ```html
@@ -49,6 +50,13 @@ module.exports = {
   <script src="/static/app.js"></script>
 </body>
 </html>
+```
+
+### app.js
+
+```javascript
+require('./app.css');
+console.log('hello world!');
 ```
 
 ### Output
