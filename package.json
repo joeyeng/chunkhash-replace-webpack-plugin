@@ -1,6 +1,6 @@
 {
   "name": "chunkhash-replace-webpack-plugin",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Webpack plugin for replacing js/css bundle references with chunkhash formatted file names.",
   "keywords": [
     "chunkhash",
@@ -25,9 +25,5 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/giemch/chunkhash-replace-webpack-plugin.git"
-  },
-  "dependencies": {
-    "css-loader": "^0.28.4",
-    "style-loader": "^0.18.1"
   }
 }
