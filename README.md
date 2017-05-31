@@ -19,7 +19,6 @@ $ npm install chunkhash-replace-webpack-plugin --save-dev
 ```javascript
 const path = require('path');
 const ChunkHashReplacePlugin = require('chunkhash-replace-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: {
