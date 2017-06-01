@@ -51,13 +51,6 @@ module.exports = {
 </html>
 ```
 
-### app.js
-
-```javascript
-require('./app.css');
-console.log('hello world!');
-```
-
 ### Output
 
 ```html
