@@ -13,7 +13,7 @@ function transform(template, chunks) {
                 .split('.')
                 .slice(0, -1)
                 .join('')
-                .replace(/[^a-z0-9_]/gi, '');
+                .replace(/[^a-z0-9_$]/gi, '');
 
             let regex = null;
             switch (extension) {
@@ -26,7 +26,7 @@ function transform(template, chunks) {
                     break;
                 }
                 default:
-                    return;
+                    continue;
             }
 
             htmlOutput = htmlOutput.replace(regex, `$1${file}$3`);
