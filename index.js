@@ -22,7 +22,7 @@ ChunkHashReplacePlugin.prototype.apply = function (compiler) {
       const stats = statsData.toJson();
       const template = fs.readFileSync(src, 'utf8');
       const htmlOutput = transform(template, stats.chunks);
-      fs.writeFile(dest, htmlOutput);
+      fs.writeFileSync(dest, htmlOutput);
     });
   });
 };
