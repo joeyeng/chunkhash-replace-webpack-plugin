@@ -1,6 +1,6 @@
 Chunkhash Replace Webpack Plugin
 ================================
-[![Build](https://travis-ci.org/giemch/chunkhash-replace-webpack-plugin.svg?branch=master)](https://travis-ci.org/giemch/chunkhash-replace-webpack-plugin)
+[![Build](https://travis-ci.org/joeyeng/chunkhash-replace-webpack-plugin.svg?branch=master)](https://travis-ci.org/giemch/chunkhash-replace-webpack-plugin)
 [![Total Downloads](https://img.shields.io/npm/dt/chunkhash-replace-webpack-plugin.svg)](https://npm-stat.com/charts.html?package=chunkhash-replace-webpack-plugin)
 
 This plugin is for transforming bundle references in your html files with cache friendly filenames using chunkhashes. Its main use is for processing js file references. CSS files will work too, but chunkhashes are associated with js bundles, so changes to your css will not generate a new chunkhash. For handling CSS bundles I recommend the [Content Hash Replace Plugin](https://www.npmjs.com/package/contenthash-replace-webpack-plugin).
