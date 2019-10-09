@@ -18,11 +18,11 @@ function transform(template, chunks) {
             let regex = null;
             switch (extension) {
                 case 'js': {
-                    regex = new RegExp(`(src=["'].*)(${fileName}\\.js)(["'])`, 'i');
+                    regex = new RegExp(`(src=["'].*/)(${fileName}\\.js)(["'])`, 'i');
                     break;
                 }
                 case 'css': {
-                    regex = new RegExp(`(href=["'].*)(${fileName}\\.css)(["'])`, 'i');
+                    regex = new RegExp(`(href=["'].*/)(${fileName}\\.css)(["'])`, 'i');
                     break;
                 }
                 default:
