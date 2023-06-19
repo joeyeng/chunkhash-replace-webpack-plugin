@@ -2,7 +2,7 @@
 
 const path = require('path');
 const fs = require('fs');
-const transform = require("./transform");
+const transform = require('./transform');
 
 class ChunkHashReplacePlugin {
   constructor(options) {
